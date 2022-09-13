@@ -1,0 +1,67 @@
+﻿@model DataLayer.tb_NGUOIDUNG
+@{
+    ViewBag.Title = "Thêm người dùng";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.TENNGUOIDUNG, "Tên người dùng", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TENNGUOIDUNG, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TENNGUOIDUNG, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PASSWORD, "Mật khẩu", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PASSWORD, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TINHTRANGHOATDONG, "Tình trạng hoạt động", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.TINHTRANGHOATDONG)
+                @Html.ValidationMessageFor(model => model.TINHTRANGHOATDONG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.IDNHANVIEN, "Nhân viên", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("IDNHANVIEN", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IDNHANVIEN, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.IDLOAINGUOIDUNG, "Loại người dùng", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("IDLOAINGUOIDUNG", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.IDLOAINGUOIDUNG, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Thêm" class="btn btn-default" />
+            @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
+}
+
+
+
+

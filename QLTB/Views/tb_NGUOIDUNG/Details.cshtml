@@ -1,0 +1,58 @@
+﻿@model DataLayer.tb_NGUOIDUNG
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_NGUOIDUNG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENNGUOIDUNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENNGUOIDUNG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TINHTRANGHOATDONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANGHOATDONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_LOAINGUOIDUNG.LOAINGUOIDUNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_LOAINGUOIDUNG.LOAINGUOIDUNG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_NHANVIEN.HOVATEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_NHANVIEN.HOVATEN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDNGUOIDUNG }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DataLayer.tb_YEUCAUTHIETBI>
+
+@{
+    ViewBag.Title = "Yêu cầu thành công";
+}
+
+@*<p>
+    @Html.ActionLink("Thêm yêu cầu", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Yêu cầu thiết bị</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Tên thiết bị
+                        </th>
+                        <th>
+                            Nhân viên
+                        </th>
+                        <th>
+                            Số lượng
+                        </th>
+                        <th>
+                            Ngày yêu cầu
+                        </th>
+                        <th>
+                            Ngày trả
+                        </th>
+                        <th>
+                            Trạng thái
+                        </th>
+                        <th>
+                            Mô tả
+                        </th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tb_THIETBI.TENTHIETBI)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tb_NHANVIEN.HOVATEN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SOLUONG)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NGAYYEUCAU)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NGAYTRA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TRANGTHAI)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GHICHU)
+                        </td>
+                  
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>*@

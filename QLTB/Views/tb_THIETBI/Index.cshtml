@@ -1,0 +1,84 @@
+﻿@model IEnumerable<DataLayer.tb_THIETBI>
+
+@{
+    ViewBag.Title = "Danh sách thiết bị";
+}
+
+
+<p>
+    @Html.ActionLink("Thêm thiết bị", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            Tên thiết bị
+        </th>
+        <th>
+            Loại thiết bị
+        </th>
+        <th>
+            Phòng ban
+        </th>
+
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Xuất xứ
+        </th>
+        <th>
+            Cấu hình
+        </th>
+        <th>
+            Số IP
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Ghi chú
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENTHIETBI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tb_LOAITHIETBI.TENLOAITHIETBI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tb_PHONGBAN.TENPHONGBAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOTA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.XUATXU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CAUHINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOIP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOLUONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GHICHU)
+            </td>
+
+
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDTHIETBI }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.IDTHIETBI }, new { @class = "btn btn-danger" })
+        </tr>
+    }
+
+</table>
+

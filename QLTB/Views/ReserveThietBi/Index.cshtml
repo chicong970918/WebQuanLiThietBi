@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DataLayer.tb_THIETBI>
+
+@{
+    ViewBag.Title = "Danh sách thiết bị";
+}
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Yêu cầu thiết bị</h6>
+        <h3 class="text-success">@ViewBag.Message</h3>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Thiết bị
+                        </th>
+                        <td>
+                            Mô tả
+                        </td>
+                        <th>
+                            Cấu hình
+                        </th>
+                        <th>
+                            Số IP
+                        </th>
+
+                        <th>
+                            Loại thiết bị
+                        </th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TENTHIETBI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MOTA)
+                            </td>
+                            <td>
+                            @Html.DisplayFor(modelItem => item.CAUHINH)
+                            (@Html.DisplayFor(modelItem => item.XUATXU))
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SOIP)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tb_LOAITHIETBI.TENLOAITHIETBI)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Yêu cầu đặt trước", "ReserveThietBi", new { id = item.IDTHIETBI }, new { @class = "btn btn-success" }) |
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+        </div>
+    </div>
+</div>

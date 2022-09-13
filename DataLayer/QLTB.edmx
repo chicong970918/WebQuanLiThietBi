@@ -1,0 +1,1375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QuanLyThietBiCongTyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PurTemDetailsTable">
+          <Key>
+            <PropertyRef Name="PurTemID" />
+          </Key>
+          <Property Name="PurTemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDTHIETBI" Type="int" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" Nullable="false" />
+          <Property Name="DONGIA" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_CHITIETNHAPHANG">
+          <Key>
+            <PropertyRef Name="IDCHITIETNHAPHANG" />
+          </Key>
+          <Property Name="IDCHITIETNHAPHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDTHIETBI" Type="int" Nullable="false" />
+          <Property Name="IDNHAPHANG" Type="int" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" Nullable="false" />
+          <Property Name="DONGIA" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_CHUCVU">
+          <Key>
+            <PropertyRef Name="IDCHUCVU" />
+          </Key>
+          <Property Name="IDCHUCVU" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENCHUCVU" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+          <Property Name="QUYEN" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_LOAINGUOIDUNG">
+          <Key>
+            <PropertyRef Name="IDLOAINGUOIDUNG" />
+          </Key>
+          <Property Name="IDLOAINGUOIDUNG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LOAINGUOIDUNG" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_LOAITHIETBI">
+          <Key>
+            <PropertyRef Name="IDLOAITHIETBI" />
+          </Key>
+          <Property Name="IDLOAITHIETBI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENLOAITHIETBI" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_NGUOIDUNG">
+          <Key>
+            <PropertyRef Name="IDNGUOIDUNG" />
+          </Key>
+          <Property Name="IDNGUOIDUNG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDLOAINGUOIDUNG" Type="int" Nullable="false" />
+          <Property Name="TENNGUOIDUNG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDNHANVIEN" Type="int" Nullable="false" />
+          <Property Name="TINHTRANGHOATDONG" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_NHACUNGCAP">
+          <Key>
+            <PropertyRef Name="IDNHACUNGCAP" />
+          </Key>
+          <Property Name="IDNHACUNGCAP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENNHACUNGCAP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="150" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TB_NHANTHIETBI">
+          <Key>
+            <PropertyRef Name="IDNVTB" />
+          </Key>
+          <Property Name="IDNVTB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDNHANVIEN" Type="int" Nullable="false" />
+          <Property Name="IDTHIETBI" Type="int" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+          <Property Name="NGAYTRA" Type="date" Nullable="false" />
+          <Property Name="FineAmount" Type="float" Nullable="false" />
+          <Property Name="ReceiveAmount" Type="float" />
+          <Property Name="TONGNGAYDUNG" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN">
+          <Key>
+            <PropertyRef Name="IDNHANVIEN" />
+          </Key>
+          <Property Name="IDNHANVIEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+          <Property Name="HOVATEN" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="GIOITINH" Type="bit" Nullable="false" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="IDCHUCVU" Type="int" Nullable="false" />
+          <Property Name="IDPHONGBAN" Type="int" Nullable="false" />
+          <Property Name="TINHTRANGHOATDONG" Type="bit" Nullable="false" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_NHAPHANG">
+          <Key>
+            <PropertyRef Name="IDNHAPHANG" />
+          </Key>
+          <Property Name="IDNHAPHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NGAYNHAP" Type="date" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+          <Property Name="GIA" Type="float" Nullable="false" />
+          <Property Name="IDNHACUNGCAP" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_PHONGBAN">
+          <Key>
+            <PropertyRef Name="IDPHONGBAN" />
+          </Key>
+          <Property Name="IDPHONGBAN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENPHONGBAN" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_THIETBI">
+          <Key>
+            <PropertyRef Name="IDTHIETBI" />
+          </Key>
+          <Property Name="IDTHIETBI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+          <Property Name="IDPHONGBAN" Type="int" Nullable="false" />
+          <Property Name="IDLOAITHIETBI" Type="int" Nullable="false" />
+          <Property Name="TENTHIETBI" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="XUATXU" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="CAUHINH" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SOIP" Type="float" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" Nullable="false" />
+          <Property Name="NHAYNHAP" Type="date" Nullable="false" />
+          <Property Name="GIA" Type="float" Nullable="false" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tb_TRATHIETBI">
+          <Key>
+            <PropertyRef Name="TBReturnID" />
+          </Key>
+          <Property Name="TBReturnID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDTHIETBI" Type="int" Nullable="false" />
+          <Property Name="IDNHANVIEN" Type="int" Nullable="false" />
+          <Property Name="NGAYYEUCAU" Type="date" Nullable="false" />
+          <Property Name="NGAYTRA" Type="date" Nullable="false" />
+          <Property Name="NGAYHIENTAI" Type="date" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_YEUCAUTHIETBI">
+          <Key>
+            <PropertyRef Name="IDYEUCAUTB" />
+          </Key>
+          <Property Name="IDYEUCAUTB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="int" Nullable="false" />
+          <Property Name="IDTHIETBI" Type="int" Nullable="false" />
+          <Property Name="IDNHANVIEN" Type="int" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" Nullable="false" />
+          <Property Name="NGAYYEUCAU" Type="date" Nullable="false" />
+          <Property Name="NGAYTRA" Type="date" Nullable="false" />
+          <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+          <Property Name="ReserveNoOfCopies" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PurTemDetailsTable_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="PurTemDetailsTable" Type="Self.PurTemDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="PurTemDetailsTable">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHITIETNHAPHANG_tb_NHAPHANG">
+          <End Role="tb_NHAPHANG" Type="Self.tb_NHAPHANG" Multiplicity="1" />
+          <End Role="tb_CHITIETNHAPHANG" Type="Self.tb_CHITIETNHAPHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHAPHANG">
+              <PropertyRef Name="IDNHAPHANG" />
+            </Principal>
+            <Dependent Role="tb_CHITIETNHAPHANG">
+              <PropertyRef Name="IDNHAPHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHITIETNHAPHANG_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="tb_CHITIETNHAPHANG" Type="Self.tb_CHITIETNHAPHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="tb_CHITIETNHAPHANG">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHUCVU_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_CHUCVU" Type="Self.tb_CHUCVU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_CHUCVU">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NGUOIDUNG_tb_LOAINGUOIDUNG">
+          <End Role="tb_LOAINGUOIDUNG" Type="Self.tb_LOAINGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_LOAINGUOIDUNG">
+              <PropertyRef Name="IDLOAINGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDLOAINGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NGUOIDUNG_tb_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="1" />
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Principal>
+            <Dependent Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHACUNGCAP_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_NHACUNGCAP" Type="Self.tb_NHACUNGCAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_NHACUNGCAP">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_NHANTHIETBI_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="TB_NHANTHIETBI" Type="Self.TB_NHANTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="TB_NHANTHIETBI">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_NHANTHIETBI_tb_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="1" />
+          <End Role="TB_NHANTHIETBI" Type="Self.TB_NHANTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Principal>
+            <Dependent Role="TB_NHANTHIETBI">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_NHANTHIETBI_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="TB_NHANTHIETBI" Type="Self.TB_NHANTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="TB_NHANTHIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHANVIEN_tb_CHUCVU">
+          <End Role="tb_CHUCVU" Type="Self.tb_CHUCVU" Multiplicity="1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCVU">
+              <PropertyRef Name="IDCHUCVU" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDCHUCVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHANVIEN_tb_PHONGBAN">
+          <End Role="tb_PHONGBAN" Type="Self.tb_PHONGBAN" Multiplicity="1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PHONGBAN">
+              <PropertyRef Name="IDPHONGBAN" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDPHONGBAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHAPHANG_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_NHAPHANG" Type="Self.tb_NHAPHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_NHAPHANG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHAPHANG_tb_NHACUNGCAP">
+          <End Role="tb_NHACUNGCAP" Type="Self.tb_NHACUNGCAP" Multiplicity="1" />
+          <End Role="tb_NHAPHANG" Type="Self.tb_NHAPHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHACUNGCAP">
+              <PropertyRef Name="IDNHACUNGCAP" />
+            </Principal>
+            <Dependent Role="tb_NHAPHANG">
+              <PropertyRef Name="IDNHACUNGCAP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_PHONGBAN_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_PHONGBAN" Type="Self.tb_PHONGBAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_PHONGBAN">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_THIETBI_tb_LOAITHIETBI">
+          <End Role="tb_LOAITHIETBI" Type="Self.tb_LOAITHIETBI" Multiplicity="1" />
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_LOAITHIETBI">
+              <PropertyRef Name="IDLOAITHIETBI" />
+            </Principal>
+            <Dependent Role="tb_THIETBI">
+              <PropertyRef Name="IDLOAITHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_THIETBI_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_THIETBI">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_THIETBI_tb_PHONGBAN">
+          <End Role="tb_PHONGBAN" Type="Self.tb_PHONGBAN" Multiplicity="1" />
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PHONGBAN">
+              <PropertyRef Name="IDPHONGBAN" />
+            </Principal>
+            <Dependent Role="tb_THIETBI">
+              <PropertyRef Name="IDPHONGBAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TRATHIETBI_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_TRATHIETBI" Type="Self.tb_TRATHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_TRATHIETBI">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TRATHIETBI_tb_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="1" />
+          <End Role="tb_TRATHIETBI" Type="Self.tb_TRATHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Principal>
+            <Dependent Role="tb_TRATHIETBI">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TRATHIETBI_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="tb_TRATHIETBI" Type="Self.tb_TRATHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="tb_TRATHIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_YEUCAUTHIETBI_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_YEUCAUTHIETBI" Type="Self.tb_YEUCAUTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_YEUCAUTHIETBI">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_YEUCAUTHIETBI_tb_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="1" />
+          <End Role="tb_YEUCAUTHIETBI" Type="Self.tb_YEUCAUTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Principal>
+            <Dependent Role="tb_YEUCAUTHIETBI">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_YEUCAUTHIETBI_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="tb_YEUCAUTHIETBI" Type="Self.tb_YEUCAUTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="tb_YEUCAUTHIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuanLyThietBiCongTyModelStoreContainer">
+          <EntitySet Name="PurTemDetailsTable" EntityType="Self.PurTemDetailsTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CHITIETNHAPHANG" EntityType="Self.tb_CHITIETNHAPHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CHUCVU" EntityType="Self.tb_CHUCVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_LOAINGUOIDUNG" EntityType="Self.tb_LOAINGUOIDUNG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_LOAITHIETBI" EntityType="Self.tb_LOAITHIETBI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NGUOIDUNG" EntityType="Self.tb_NGUOIDUNG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NHACUNGCAP" EntityType="Self.tb_NHACUNGCAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_NHANTHIETBI" EntityType="Self.TB_NHANTHIETBI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NHANVIEN" EntityType="Self.tb_NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NHAPHANG" EntityType="Self.tb_NHAPHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_PHONGBAN" EntityType="Self.tb_PHONGBAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_THIETBI" EntityType="Self.tb_THIETBI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TRATHIETBI" EntityType="Self.tb_TRATHIETBI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_YEUCAUTHIETBI" EntityType="Self.tb_YEUCAUTHIETBI" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PurTemDetailsTable_tb_THIETBI" Association="Self.FK_PurTemDetailsTable_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="PurTemDetailsTable" EntitySet="PurTemDetailsTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHITIETNHAPHANG_tb_NHAPHANG" Association="Self.FK_tb_CHITIETNHAPHANG_tb_NHAPHANG">
+            <End Role="tb_NHAPHANG" EntitySet="tb_NHAPHANG" />
+            <End Role="tb_CHITIETNHAPHANG" EntitySet="tb_CHITIETNHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHITIETNHAPHANG_tb_THIETBI" Association="Self.FK_tb_CHITIETNHAPHANG_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="tb_CHITIETNHAPHANG" EntitySet="tb_CHITIETNHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHUCVU_tb_NGUOIDUNG" Association="Self.FK_tb_CHUCVU_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NGUOIDUNG_tb_LOAINGUOIDUNG" Association="Self.FK_tb_NGUOIDUNG_tb_LOAINGUOIDUNG">
+            <End Role="tb_LOAINGUOIDUNG" EntitySet="tb_LOAINGUOIDUNG" />
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NGUOIDUNG_tb_NHANVIEN" Association="Self.FK_tb_NGUOIDUNG_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHACUNGCAP_tb_NGUOIDUNG" Association="Self.FK_tb_NHACUNGCAP_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_NHACUNGCAP" EntitySet="tb_NHACUNGCAP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_NHANTHIETBI_tb_NGUOIDUNG" Association="Self.FK_TB_NHANTHIETBI_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="TB_NHANTHIETBI" EntitySet="TB_NHANTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_NHANTHIETBI_tb_NHANVIEN" Association="Self.FK_TB_NHANTHIETBI_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="TB_NHANTHIETBI" EntitySet="TB_NHANTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_NHANTHIETBI_tb_THIETBI" Association="Self.FK_TB_NHANTHIETBI_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="TB_NHANTHIETBI" EntitySet="TB_NHANTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHANVIEN_tb_CHUCVU" Association="Self.FK_tb_NHANVIEN_tb_CHUCVU">
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHANVIEN_tb_PHONGBAN" Association="Self.FK_tb_NHANVIEN_tb_PHONGBAN">
+            <End Role="tb_PHONGBAN" EntitySet="tb_PHONGBAN" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHAPHANG_tb_NGUOIDUNG" Association="Self.FK_tb_NHAPHANG_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_NHAPHANG" EntitySet="tb_NHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHAPHANG_tb_NHACUNGCAP" Association="Self.FK_tb_NHAPHANG_tb_NHACUNGCAP">
+            <End Role="tb_NHACUNGCAP" EntitySet="tb_NHACUNGCAP" />
+            <End Role="tb_NHAPHANG" EntitySet="tb_NHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_PHONGBAN_tb_NGUOIDUNG" Association="Self.FK_tb_PHONGBAN_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_PHONGBAN" EntitySet="tb_PHONGBAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_THIETBI_tb_LOAITHIETBI" Association="Self.FK_tb_THIETBI_tb_LOAITHIETBI">
+            <End Role="tb_LOAITHIETBI" EntitySet="tb_LOAITHIETBI" />
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_THIETBI_tb_NGUOIDUNG" Association="Self.FK_tb_THIETBI_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_THIETBI_tb_PHONGBAN" Association="Self.FK_tb_THIETBI_tb_PHONGBAN">
+            <End Role="tb_PHONGBAN" EntitySet="tb_PHONGBAN" />
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TRATHIETBI_tb_NGUOIDUNG" Association="Self.FK_tb_TRATHIETBI_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_TRATHIETBI" EntitySet="tb_TRATHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TRATHIETBI_tb_NHANVIEN" Association="Self.FK_tb_TRATHIETBI_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_TRATHIETBI" EntitySet="tb_TRATHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TRATHIETBI_tb_THIETBI" Association="Self.FK_tb_TRATHIETBI_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="tb_TRATHIETBI" EntitySet="tb_TRATHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_YEUCAUTHIETBI_tb_NGUOIDUNG" Association="Self.FK_tb_YEUCAUTHIETBI_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_YEUCAUTHIETBI" EntitySet="tb_YEUCAUTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_YEUCAUTHIETBI_tb_NHANVIEN" Association="Self.FK_tb_YEUCAUTHIETBI_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_YEUCAUTHIETBI" EntitySet="tb_YEUCAUTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_YEUCAUTHIETBI_tb_THIETBI" Association="Self.FK_tb_YEUCAUTHIETBI_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="tb_YEUCAUTHIETBI" EntitySet="tb_YEUCAUTHIETBI" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLyThietBiCongTyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PurTemDetailsTable">
+          <Key>
+            <PropertyRef Name="PurTemID" />
+          </Key>
+          <Property Name="PurTemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTHIETBI" Type="Int32" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+          <Property Name="DONGIA" Type="Double" Nullable="false" />
+          <NavigationProperty Name="tb_THIETBI" Relationship="Self.FK_PurTemDetailsTable_tb_THIETBI" FromRole="PurTemDetailsTable" ToRole="tb_THIETBI" />
+        </EntityType>
+        <EntityType Name="tb_CHITIETNHAPHANG">
+          <Key>
+            <PropertyRef Name="IDCHITIETNHAPHANG" />
+          </Key>
+          <Property Name="IDCHITIETNHAPHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTHIETBI" Type="Int32" Nullable="false" />
+          <Property Name="IDNHAPHANG" Type="Int32" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+          <Property Name="DONGIA" Type="Double" Nullable="false" />
+          <NavigationProperty Name="tb_NHAPHANG" Relationship="Self.FK_tb_CHITIETNHAPHANG_tb_NHAPHANG" FromRole="tb_CHITIETNHAPHANG" ToRole="tb_NHAPHANG" />
+          <NavigationProperty Name="tb_THIETBI" Relationship="Self.FK_tb_CHITIETNHAPHANG_tb_THIETBI" FromRole="tb_CHITIETNHAPHANG" ToRole="tb_THIETBI" />
+        </EntityType>
+        <EntityType Name="tb_CHUCVU">
+          <Key>
+            <PropertyRef Name="IDCHUCVU" />
+          </Key>
+          <Property Name="IDCHUCVU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENCHUCVU" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <Property Name="QUYEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_tb_CHUCVU_tb_NGUOIDUNG" FromRole="tb_CHUCVU" ToRole="tb_NGUOIDUNG" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="Self.FK_tb_NHANVIEN_tb_CHUCVU" FromRole="tb_CHUCVU" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_LOAINGUOIDUNG">
+          <Key>
+            <PropertyRef Name="IDLOAINGUOIDUNG" />
+          </Key>
+          <Property Name="IDLOAINGUOIDUNG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LOAINGUOIDUNG" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_tb_NGUOIDUNG_tb_LOAINGUOIDUNG" FromRole="tb_LOAINGUOIDUNG" ToRole="tb_NGUOIDUNG" />
+        </EntityType>
+        <EntityType Name="tb_LOAITHIETBI">
+          <Key>
+            <PropertyRef Name="IDLOAITHIETBI" />
+          </Key>
+          <Property Name="IDLOAITHIETBI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENLOAITHIETBI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_THIETBI" Relationship="Self.FK_tb_THIETBI_tb_LOAITHIETBI" FromRole="tb_LOAITHIETBI" ToRole="tb_THIETBI" />
+        </EntityType>
+        <EntityType Name="tb_NGUOIDUNG">
+          <Key>
+            <PropertyRef Name="IDNGUOIDUNG" />
+          </Key>
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDLOAINGUOIDUNG" Type="Int32" Nullable="false" />
+          <Property Name="TENNGUOIDUNG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDNHANVIEN" Type="Int32" Nullable="false" />
+          <Property Name="TINHTRANGHOATDONG" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_CHUCVU" Relationship="Self.FK_tb_CHUCVU_tb_NGUOIDUNG" FromRole="tb_NGUOIDUNG" ToRole="tb_CHUCVU" />
+          <NavigationProperty Name="tb_LOAINGUOIDUNG" Relationship="Self.FK_tb_NGUOIDUNG_tb_LOAINGUOIDUNG" FromRole="tb_NGUOIDUNG" ToRole="tb_LOAINGUOIDUNG" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="Self.FK_tb_NGUOIDUNG_tb_NHANVIEN" FromRole="tb_NGUOIDUNG" ToRole="tb_NHANVIEN" />
+          <NavigationProperty Name="tb_NHACUNGCAP" Relationship="Self.FK_tb_NHACUNGCAP_tb_NGUOIDUNG" FromRole="tb_NGUOIDUNG" ToRole="tb_NHACUNGCAP" />
+          <NavigationProperty Name="TB_NHANTHIETBI" Relationship="Self.FK_TB_NHANTHIETBI_tb_NGUOIDUNG" FromRole="tb_NGUOIDUNG" ToRole="TB_NHANTHIETBI" />
+          <NavigationProperty Name="tb_NHAPHANG" Relationship="Self.FK_tb_NHAPHANG_tb_NGUOIDUNG" FromRole="tb_NGUOIDUNG" ToRole="tb_NHAPHANG" />
+          <NavigationProperty Name="tb_PHONGBAN" Relationship="Self.FK_tb_PHONGBAN_tb_NGUOIDUNG" FromRole="tb_NGUOIDUNG" ToRole="tb_PHONGBAN" />
+          <NavigationProperty Name="tb_THIETBI" Relationship="Self.FK_tb_THIETBI_tb_NGUOIDUNG" FromRole="tb_NGUOIDUNG" ToRole="tb_THIETBI" />
+          <NavigationProperty Name="tb_TRATHIETBI" Relationship="Self.FK_tb_TRATHIETBI_tb_NGUOIDUNG" FromRole="tb_NGUOIDUNG" ToRole="tb_TRATHIETBI" />
+          <NavigationProperty Name="tb_YEUCAUTHIETBI" Relationship="Self.FK_tb_YEUCAUTHIETBI_tb_NGUOIDUNG" FromRole="tb_NGUOIDUNG" ToRole="tb_YEUCAUTHIETBI" />
+        </EntityType>
+        <EntityType Name="tb_NHACUNGCAP">
+          <Key>
+            <PropertyRef Name="IDNHACUNGCAP" />
+          </Key>
+          <Property Name="IDNHACUNGCAP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENNHACUNGCAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_tb_NHACUNGCAP_tb_NGUOIDUNG" FromRole="tb_NHACUNGCAP" ToRole="tb_NGUOIDUNG" />
+          <NavigationProperty Name="tb_NHAPHANG" Relationship="Self.FK_tb_NHAPHANG_tb_NHACUNGCAP" FromRole="tb_NHACUNGCAP" ToRole="tb_NHAPHANG" />
+        </EntityType>
+        <EntityType Name="TB_NHANTHIETBI">
+          <Key>
+            <PropertyRef Name="IDNVTB" />
+          </Key>
+          <Property Name="IDNVTB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDNHANVIEN" Type="Int32" Nullable="false" />
+          <Property Name="IDTHIETBI" Type="Int32" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <Property Name="NGAYTRA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FineAmount" Type="Double" Nullable="false" />
+          <Property Name="ReceiveAmount" Type="Double" />
+          <Property Name="TONGNGAYDUNG" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_TB_NHANTHIETBI_tb_NGUOIDUNG" FromRole="TB_NHANTHIETBI" ToRole="tb_NGUOIDUNG" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="Self.FK_TB_NHANTHIETBI_tb_NHANVIEN" FromRole="TB_NHANTHIETBI" ToRole="tb_NHANVIEN" />
+          <NavigationProperty Name="tb_THIETBI" Relationship="Self.FK_TB_NHANTHIETBI_tb_THIETBI" FromRole="TB_NHANTHIETBI" ToRole="tb_THIETBI" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN">
+          <Key>
+            <PropertyRef Name="IDNHANVIEN" />
+          </Key>
+          <Property Name="IDNHANVIEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <Property Name="HOVATEN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GIOITINH" Type="Boolean" Nullable="false" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIACHI" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDCHUCVU" Type="Int32" Nullable="false" />
+          <Property Name="IDPHONGBAN" Type="Int32" Nullable="false" />
+          <Property Name="TINHTRANGHOATDONG" Type="Boolean" Nullable="false" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_CHUCVU" Relationship="Self.FK_tb_NHANVIEN_tb_CHUCVU" FromRole="tb_NHANVIEN" ToRole="tb_CHUCVU" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_tb_NGUOIDUNG_tb_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_NGUOIDUNG" />
+          <NavigationProperty Name="TB_NHANTHIETBI" Relationship="Self.FK_TB_NHANTHIETBI_tb_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="TB_NHANTHIETBI" />
+          <NavigationProperty Name="tb_PHONGBAN" Relationship="Self.FK_tb_NHANVIEN_tb_PHONGBAN" FromRole="tb_NHANVIEN" ToRole="tb_PHONGBAN" />
+          <NavigationProperty Name="tb_TRATHIETBI" Relationship="Self.FK_tb_TRATHIETBI_tb_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_TRATHIETBI" />
+          <NavigationProperty Name="tb_YEUCAUTHIETBI" Relationship="Self.FK_tb_YEUCAUTHIETBI_tb_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_YEUCAUTHIETBI" />
+        </EntityType>
+        <EntityType Name="tb_NHAPHANG">
+          <Key>
+            <PropertyRef Name="IDNHAPHANG" />
+          </Key>
+          <Property Name="IDNHAPHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NGAYNHAP" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <Property Name="GIA" Type="Double" Nullable="false" />
+          <Property Name="IDNHACUNGCAP" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_CHITIETNHAPHANG" Relationship="Self.FK_tb_CHITIETNHAPHANG_tb_NHAPHANG" FromRole="tb_NHAPHANG" ToRole="tb_CHITIETNHAPHANG" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_tb_NHAPHANG_tb_NGUOIDUNG" FromRole="tb_NHAPHANG" ToRole="tb_NGUOIDUNG" />
+          <NavigationProperty Name="tb_NHACUNGCAP" Relationship="Self.FK_tb_NHAPHANG_tb_NHACUNGCAP" FromRole="tb_NHAPHANG" ToRole="tb_NHACUNGCAP" />
+        </EntityType>
+        <EntityType Name="tb_PHONGBAN">
+          <Key>
+            <PropertyRef Name="IDPHONGBAN" />
+          </Key>
+          <Property Name="IDPHONGBAN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENPHONGBAN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_tb_PHONGBAN_tb_NGUOIDUNG" FromRole="tb_PHONGBAN" ToRole="tb_NGUOIDUNG" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="Self.FK_tb_NHANVIEN_tb_PHONGBAN" FromRole="tb_PHONGBAN" ToRole="tb_NHANVIEN" />
+          <NavigationProperty Name="tb_THIETBI" Relationship="Self.FK_tb_THIETBI_tb_PHONGBAN" FromRole="tb_PHONGBAN" ToRole="tb_THIETBI" />
+        </EntityType>
+        <EntityType Name="tb_THIETBI">
+          <Key>
+            <PropertyRef Name="IDTHIETBI" />
+          </Key>
+          <Property Name="IDTHIETBI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <Property Name="IDPHONGBAN" Type="Int32" Nullable="false" />
+          <Property Name="IDLOAITHIETBI" Type="Int32" Nullable="false" />
+          <Property Name="TENTHIETBI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MOTA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="XUATXU" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CAUHINH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SOIP" Type="Double" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+          <Property Name="NHAYNHAP" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GIA" Type="Double" Nullable="false" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PurTemDetailsTables" Relationship="Self.FK_PurTemDetailsTable_tb_THIETBI" FromRole="tb_THIETBI" ToRole="PurTemDetailsTable" />
+          <NavigationProperty Name="tb_CHITIETNHAPHANG" Relationship="Self.FK_tb_CHITIETNHAPHANG_tb_THIETBI" FromRole="tb_THIETBI" ToRole="tb_CHITIETNHAPHANG" />
+          <NavigationProperty Name="tb_LOAITHIETBI" Relationship="Self.FK_tb_THIETBI_tb_LOAITHIETBI" FromRole="tb_THIETBI" ToRole="tb_LOAITHIETBI" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_tb_THIETBI_tb_NGUOIDUNG" FromRole="tb_THIETBI" ToRole="tb_NGUOIDUNG" />
+          <NavigationProperty Name="TB_NHANTHIETBI" Relationship="Self.FK_TB_NHANTHIETBI_tb_THIETBI" FromRole="tb_THIETBI" ToRole="TB_NHANTHIETBI" />
+          <NavigationProperty Name="tb_PHONGBAN" Relationship="Self.FK_tb_THIETBI_tb_PHONGBAN" FromRole="tb_THIETBI" ToRole="tb_PHONGBAN" />
+          <NavigationProperty Name="tb_TRATHIETBI" Relationship="Self.FK_tb_TRATHIETBI_tb_THIETBI" FromRole="tb_THIETBI" ToRole="tb_TRATHIETBI" />
+          <NavigationProperty Name="tb_YEUCAUTHIETBI" Relationship="Self.FK_tb_YEUCAUTHIETBI_tb_THIETBI" FromRole="tb_THIETBI" ToRole="tb_YEUCAUTHIETBI" />
+        </EntityType>
+        <EntityType Name="tb_TRATHIETBI">
+          <Key>
+            <PropertyRef Name="TBReturnID" />
+          </Key>
+          <Property Name="TBReturnID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTHIETBI" Type="Int32" Nullable="false" />
+          <Property Name="IDNHANVIEN" Type="Int32" Nullable="false" />
+          <Property Name="NGAYYEUCAU" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NGAYTRA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NGAYHIENTAI" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_tb_TRATHIETBI_tb_NGUOIDUNG" FromRole="tb_TRATHIETBI" ToRole="tb_NGUOIDUNG" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="Self.FK_tb_TRATHIETBI_tb_NHANVIEN" FromRole="tb_TRATHIETBI" ToRole="tb_NHANVIEN" />
+          <NavigationProperty Name="tb_THIETBI" Relationship="Self.FK_tb_TRATHIETBI_tb_THIETBI" FromRole="tb_TRATHIETBI" ToRole="tb_THIETBI" />
+        </EntityType>
+        <EntityType Name="tb_YEUCAUTHIETBI">
+          <Key>
+            <PropertyRef Name="IDYEUCAUTB" />
+          </Key>
+          <Property Name="IDYEUCAUTB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDNGUOIDUNG" Type="Int32" Nullable="false" />
+          <Property Name="IDTHIETBI" Type="Int32" Nullable="false" />
+          <Property Name="IDNHANVIEN" Type="Int32" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+          <Property Name="NGAYYEUCAU" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NGAYTRA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TRANGTHAI" Type="Boolean" Nullable="false" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ReserveNoOfCopies" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_NGUOIDUNG" Relationship="Self.FK_tb_YEUCAUTHIETBI_tb_NGUOIDUNG" FromRole="tb_YEUCAUTHIETBI" ToRole="tb_NGUOIDUNG" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="Self.FK_tb_YEUCAUTHIETBI_tb_NHANVIEN" FromRole="tb_YEUCAUTHIETBI" ToRole="tb_NHANVIEN" />
+          <NavigationProperty Name="tb_THIETBI" Relationship="Self.FK_tb_YEUCAUTHIETBI_tb_THIETBI" FromRole="tb_YEUCAUTHIETBI" ToRole="tb_THIETBI" />
+        </EntityType>
+        <Association Name="FK_PurTemDetailsTable_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="PurTemDetailsTable" Type="Self.PurTemDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="PurTemDetailsTable">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHITIETNHAPHANG_tb_NHAPHANG">
+          <End Role="tb_NHAPHANG" Type="Self.tb_NHAPHANG" Multiplicity="1" />
+          <End Role="tb_CHITIETNHAPHANG" Type="Self.tb_CHITIETNHAPHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHAPHANG">
+              <PropertyRef Name="IDNHAPHANG" />
+            </Principal>
+            <Dependent Role="tb_CHITIETNHAPHANG">
+              <PropertyRef Name="IDNHAPHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHITIETNHAPHANG_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="tb_CHITIETNHAPHANG" Type="Self.tb_CHITIETNHAPHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="tb_CHITIETNHAPHANG">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHUCVU_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_CHUCVU" Type="Self.tb_CHUCVU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_CHUCVU">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHANVIEN_tb_CHUCVU">
+          <End Role="tb_CHUCVU" Type="Self.tb_CHUCVU" Multiplicity="1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCVU">
+              <PropertyRef Name="IDCHUCVU" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDCHUCVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NGUOIDUNG_tb_LOAINGUOIDUNG">
+          <End Role="tb_LOAINGUOIDUNG" Type="Self.tb_LOAINGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_LOAINGUOIDUNG">
+              <PropertyRef Name="IDLOAINGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDLOAINGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_THIETBI_tb_LOAITHIETBI">
+          <End Role="tb_LOAITHIETBI" Type="Self.tb_LOAITHIETBI" Multiplicity="1" />
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_LOAITHIETBI">
+              <PropertyRef Name="IDLOAITHIETBI" />
+            </Principal>
+            <Dependent Role="tb_THIETBI">
+              <PropertyRef Name="IDLOAITHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NGUOIDUNG_tb_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="1" />
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Principal>
+            <Dependent Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHACUNGCAP_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_NHACUNGCAP" Type="Self.tb_NHACUNGCAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_NHACUNGCAP">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_NHANTHIETBI_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="TB_NHANTHIETBI" Type="Self.TB_NHANTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="TB_NHANTHIETBI">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHAPHANG_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_NHAPHANG" Type="Self.tb_NHAPHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_NHAPHANG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_PHONGBAN_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_PHONGBAN" Type="Self.tb_PHONGBAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_PHONGBAN">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_THIETBI_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_THIETBI">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TRATHIETBI_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_TRATHIETBI" Type="Self.tb_TRATHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_TRATHIETBI">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_YEUCAUTHIETBI_tb_NGUOIDUNG">
+          <End Role="tb_NGUOIDUNG" Type="Self.tb_NGUOIDUNG" Multiplicity="1" />
+          <End Role="tb_YEUCAUTHIETBI" Type="Self.tb_YEUCAUTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NGUOIDUNG">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Principal>
+            <Dependent Role="tb_YEUCAUTHIETBI">
+              <PropertyRef Name="IDNGUOIDUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHAPHANG_tb_NHACUNGCAP">
+          <End Role="tb_NHACUNGCAP" Type="Self.tb_NHACUNGCAP" Multiplicity="1" />
+          <End Role="tb_NHAPHANG" Type="Self.tb_NHAPHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHACUNGCAP">
+              <PropertyRef Name="IDNHACUNGCAP" />
+            </Principal>
+            <Dependent Role="tb_NHAPHANG">
+              <PropertyRef Name="IDNHACUNGCAP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_NHANTHIETBI_tb_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="1" />
+          <End Role="TB_NHANTHIETBI" Type="Self.TB_NHANTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Principal>
+            <Dependent Role="TB_NHANTHIETBI">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_NHANTHIETBI_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="TB_NHANTHIETBI" Type="Self.TB_NHANTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="TB_NHANTHIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHANVIEN_tb_PHONGBAN">
+          <End Role="tb_PHONGBAN" Type="Self.tb_PHONGBAN" Multiplicity="1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PHONGBAN">
+              <PropertyRef Name="IDPHONGBAN" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDPHONGBAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TRATHIETBI_tb_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="1" />
+          <End Role="tb_TRATHIETBI" Type="Self.tb_TRATHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Principal>
+            <Dependent Role="tb_TRATHIETBI">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_YEUCAUTHIETBI_tb_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="1" />
+          <End Role="tb_YEUCAUTHIETBI" Type="Self.tb_YEUCAUTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Principal>
+            <Dependent Role="tb_YEUCAUTHIETBI">
+              <PropertyRef Name="IDNHANVIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_THIETBI_tb_PHONGBAN">
+          <End Role="tb_PHONGBAN" Type="Self.tb_PHONGBAN" Multiplicity="1" />
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PHONGBAN">
+              <PropertyRef Name="IDPHONGBAN" />
+            </Principal>
+            <Dependent Role="tb_THIETBI">
+              <PropertyRef Name="IDPHONGBAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TRATHIETBI_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="tb_TRATHIETBI" Type="Self.tb_TRATHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="tb_TRATHIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_YEUCAUTHIETBI_tb_THIETBI">
+          <End Role="tb_THIETBI" Type="Self.tb_THIETBI" Multiplicity="1" />
+          <End Role="tb_YEUCAUTHIETBI" Type="Self.tb_YEUCAUTHIETBI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_THIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Principal>
+            <Dependent Role="tb_YEUCAUTHIETBI">
+              <PropertyRef Name="IDTHIETBI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuanLyThietBiCongTyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PurTemDetailsTables" EntityType="Self.PurTemDetailsTable" />
+          <EntitySet Name="tb_CHITIETNHAPHANG" EntityType="Self.tb_CHITIETNHAPHANG" />
+          <EntitySet Name="tb_CHUCVU" EntityType="Self.tb_CHUCVU" />
+          <EntitySet Name="tb_LOAINGUOIDUNG" EntityType="Self.tb_LOAINGUOIDUNG" />
+          <EntitySet Name="tb_LOAITHIETBI" EntityType="Self.tb_LOAITHIETBI" />
+          <EntitySet Name="tb_NGUOIDUNG" EntityType="Self.tb_NGUOIDUNG" />
+          <EntitySet Name="tb_NHACUNGCAP" EntityType="Self.tb_NHACUNGCAP" />
+          <EntitySet Name="TB_NHANTHIETBI" EntityType="Self.TB_NHANTHIETBI" />
+          <EntitySet Name="tb_NHANVIEN" EntityType="Self.tb_NHANVIEN" />
+          <EntitySet Name="tb_NHAPHANG" EntityType="Self.tb_NHAPHANG" />
+          <EntitySet Name="tb_PHONGBAN" EntityType="Self.tb_PHONGBAN" />
+          <EntitySet Name="tb_THIETBI" EntityType="Self.tb_THIETBI" />
+          <EntitySet Name="tb_TRATHIETBI" EntityType="Self.tb_TRATHIETBI" />
+          <EntitySet Name="tb_YEUCAUTHIETBI" EntityType="Self.tb_YEUCAUTHIETBI" />
+          <AssociationSet Name="FK_PurTemDetailsTable_tb_THIETBI" Association="Self.FK_PurTemDetailsTable_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="PurTemDetailsTable" EntitySet="PurTemDetailsTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHITIETNHAPHANG_tb_NHAPHANG" Association="Self.FK_tb_CHITIETNHAPHANG_tb_NHAPHANG">
+            <End Role="tb_NHAPHANG" EntitySet="tb_NHAPHANG" />
+            <End Role="tb_CHITIETNHAPHANG" EntitySet="tb_CHITIETNHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHITIETNHAPHANG_tb_THIETBI" Association="Self.FK_tb_CHITIETNHAPHANG_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="tb_CHITIETNHAPHANG" EntitySet="tb_CHITIETNHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHUCVU_tb_NGUOIDUNG" Association="Self.FK_tb_CHUCVU_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHANVIEN_tb_CHUCVU" Association="Self.FK_tb_NHANVIEN_tb_CHUCVU">
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NGUOIDUNG_tb_LOAINGUOIDUNG" Association="Self.FK_tb_NGUOIDUNG_tb_LOAINGUOIDUNG">
+            <End Role="tb_LOAINGUOIDUNG" EntitySet="tb_LOAINGUOIDUNG" />
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_THIETBI_tb_LOAITHIETBI" Association="Self.FK_tb_THIETBI_tb_LOAITHIETBI">
+            <End Role="tb_LOAITHIETBI" EntitySet="tb_LOAITHIETBI" />
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NGUOIDUNG_tb_NHANVIEN" Association="Self.FK_tb_NGUOIDUNG_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHACUNGCAP_tb_NGUOIDUNG" Association="Self.FK_tb_NHACUNGCAP_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_NHACUNGCAP" EntitySet="tb_NHACUNGCAP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_NHANTHIETBI_tb_NGUOIDUNG" Association="Self.FK_TB_NHANTHIETBI_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="TB_NHANTHIETBI" EntitySet="TB_NHANTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHAPHANG_tb_NGUOIDUNG" Association="Self.FK_tb_NHAPHANG_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_NHAPHANG" EntitySet="tb_NHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_PHONGBAN_tb_NGUOIDUNG" Association="Self.FK_tb_PHONGBAN_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_PHONGBAN" EntitySet="tb_PHONGBAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_THIETBI_tb_NGUOIDUNG" Association="Self.FK_tb_THIETBI_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TRATHIETBI_tb_NGUOIDUNG" Association="Self.FK_tb_TRATHIETBI_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_TRATHIETBI" EntitySet="tb_TRATHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_YEUCAUTHIETBI_tb_NGUOIDUNG" Association="Self.FK_tb_YEUCAUTHIETBI_tb_NGUOIDUNG">
+            <End Role="tb_NGUOIDUNG" EntitySet="tb_NGUOIDUNG" />
+            <End Role="tb_YEUCAUTHIETBI" EntitySet="tb_YEUCAUTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHAPHANG_tb_NHACUNGCAP" Association="Self.FK_tb_NHAPHANG_tb_NHACUNGCAP">
+            <End Role="tb_NHACUNGCAP" EntitySet="tb_NHACUNGCAP" />
+            <End Role="tb_NHAPHANG" EntitySet="tb_NHAPHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_NHANTHIETBI_tb_NHANVIEN" Association="Self.FK_TB_NHANTHIETBI_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="TB_NHANTHIETBI" EntitySet="TB_NHANTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_NHANTHIETBI_tb_THIETBI" Association="Self.FK_TB_NHANTHIETBI_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="TB_NHANTHIETBI" EntitySet="TB_NHANTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHANVIEN_tb_PHONGBAN" Association="Self.FK_tb_NHANVIEN_tb_PHONGBAN">
+            <End Role="tb_PHONGBAN" EntitySet="tb_PHONGBAN" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TRATHIETBI_tb_NHANVIEN" Association="Self.FK_tb_TRATHIETBI_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_TRATHIETBI" EntitySet="tb_TRATHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_YEUCAUTHIETBI_tb_NHANVIEN" Association="Self.FK_tb_YEUCAUTHIETBI_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_YEUCAUTHIETBI" EntitySet="tb_YEUCAUTHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_THIETBI_tb_PHONGBAN" Association="Self.FK_tb_THIETBI_tb_PHONGBAN">
+            <End Role="tb_PHONGBAN" EntitySet="tb_PHONGBAN" />
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TRATHIETBI_tb_THIETBI" Association="Self.FK_tb_TRATHIETBI_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="tb_TRATHIETBI" EntitySet="tb_TRATHIETBI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_YEUCAUTHIETBI_tb_THIETBI" Association="Self.FK_tb_YEUCAUTHIETBI_tb_THIETBI">
+            <End Role="tb_THIETBI" EntitySet="tb_THIETBI" />
+            <End Role="tb_YEUCAUTHIETBI" EntitySet="tb_YEUCAUTHIETBI" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLyThietBiCongTyModelStoreContainer" CdmEntityContainer="QuanLyThietBiCongTyEntities">
+          <EntitySetMapping Name="PurTemDetailsTables">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.PurTemDetailsTable">
+              <MappingFragment StoreEntitySet="PurTemDetailsTable">
+                <ScalarProperty Name="PurTemID" ColumnName="PurTemID" />
+                <ScalarProperty Name="IDTHIETBI" ColumnName="IDTHIETBI" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CHITIETNHAPHANG">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_CHITIETNHAPHANG">
+              <MappingFragment StoreEntitySet="tb_CHITIETNHAPHANG">
+                <ScalarProperty Name="IDCHITIETNHAPHANG" ColumnName="IDCHITIETNHAPHANG" />
+                <ScalarProperty Name="IDTHIETBI" ColumnName="IDTHIETBI" />
+                <ScalarProperty Name="IDNHAPHANG" ColumnName="IDNHAPHANG" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CHUCVU">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_CHUCVU">
+              <MappingFragment StoreEntitySet="tb_CHUCVU">
+                <ScalarProperty Name="IDCHUCVU" ColumnName="IDCHUCVU" />
+                <ScalarProperty Name="TENCHUCVU" ColumnName="TENCHUCVU" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+                <ScalarProperty Name="QUYEN" ColumnName="QUYEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_LOAINGUOIDUNG">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_LOAINGUOIDUNG">
+              <MappingFragment StoreEntitySet="tb_LOAINGUOIDUNG">
+                <ScalarProperty Name="IDLOAINGUOIDUNG" ColumnName="IDLOAINGUOIDUNG" />
+                <ScalarProperty Name="LOAINGUOIDUNG" ColumnName="LOAINGUOIDUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_LOAITHIETBI">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_LOAITHIETBI">
+              <MappingFragment StoreEntitySet="tb_LOAITHIETBI">
+                <ScalarProperty Name="IDLOAITHIETBI" ColumnName="IDLOAITHIETBI" />
+                <ScalarProperty Name="TENLOAITHIETBI" ColumnName="TENLOAITHIETBI" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NGUOIDUNG">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_NGUOIDUNG">
+              <MappingFragment StoreEntitySet="tb_NGUOIDUNG">
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+                <ScalarProperty Name="IDLOAINGUOIDUNG" ColumnName="IDLOAINGUOIDUNG" />
+                <ScalarProperty Name="TENNGUOIDUNG" ColumnName="TENNGUOIDUNG" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
+                <ScalarProperty Name="TINHTRANGHOATDONG" ColumnName="TINHTRANGHOATDONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NHACUNGCAP">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_NHACUNGCAP">
+              <MappingFragment StoreEntitySet="tb_NHACUNGCAP">
+                <ScalarProperty Name="IDNHACUNGCAP" ColumnName="IDNHACUNGCAP" />
+                <ScalarProperty Name="TENNHACUNGCAP" ColumnName="TENNHACUNGCAP" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_NHANTHIETBI">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.TB_NHANTHIETBI">
+              <MappingFragment StoreEntitySet="TB_NHANTHIETBI">
+                <ScalarProperty Name="IDNVTB" ColumnName="IDNVTB" />
+                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
+                <ScalarProperty Name="IDTHIETBI" ColumnName="IDTHIETBI" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+                <ScalarProperty Name="NGAYTRA" ColumnName="NGAYTRA" />
+                <ScalarProperty Name="FineAmount" ColumnName="FineAmount" />
+                <ScalarProperty Name="ReceiveAmount" ColumnName="ReceiveAmount" />
+                <ScalarProperty Name="TONGNGAYDUNG" ColumnName="TONGNGAYDUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NHANVIEN">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_NHANVIEN">
+              <MappingFragment StoreEntitySet="tb_NHANVIEN">
+                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+                <ScalarProperty Name="HOVATEN" ColumnName="HOVATEN" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="IDCHUCVU" ColumnName="IDCHUCVU" />
+                <ScalarProperty Name="IDPHONGBAN" ColumnName="IDPHONGBAN" />
+                <ScalarProperty Name="TINHTRANGHOATDONG" ColumnName="TINHTRANGHOATDONG" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NHAPHANG">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_NHAPHANG">
+              <MappingFragment StoreEntitySet="tb_NHAPHANG">
+                <ScalarProperty Name="IDNHAPHANG" ColumnName="IDNHAPHANG" />
+                <ScalarProperty Name="NGAYNHAP" ColumnName="NGAYNHAP" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="IDNHACUNGCAP" ColumnName="IDNHACUNGCAP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_PHONGBAN">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_PHONGBAN">
+              <MappingFragment StoreEntitySet="tb_PHONGBAN">
+                <ScalarProperty Name="IDPHONGBAN" ColumnName="IDPHONGBAN" />
+                <ScalarProperty Name="TENPHONGBAN" ColumnName="TENPHONGBAN" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_THIETBI">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_THIETBI">
+              <MappingFragment StoreEntitySet="tb_THIETBI">
+                <ScalarProperty Name="IDTHIETBI" ColumnName="IDTHIETBI" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+                <ScalarProperty Name="IDPHONGBAN" ColumnName="IDPHONGBAN" />
+                <ScalarProperty Name="IDLOAITHIETBI" ColumnName="IDLOAITHIETBI" />
+                <ScalarProperty Name="TENTHIETBI" ColumnName="TENTHIETBI" />
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="XUATXU" ColumnName="XUATXU" />
+                <ScalarProperty Name="CAUHINH" ColumnName="CAUHINH" />
+                <ScalarProperty Name="SOIP" ColumnName="SOIP" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="NHAYNHAP" ColumnName="NHAYNHAP" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TRATHIETBI">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_TRATHIETBI">
+              <MappingFragment StoreEntitySet="tb_TRATHIETBI">
+                <ScalarProperty Name="TBReturnID" ColumnName="TBReturnID" />
+                <ScalarProperty Name="IDTHIETBI" ColumnName="IDTHIETBI" />
+                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
+                <ScalarProperty Name="NGAYYEUCAU" ColumnName="NGAYYEUCAU" />
+                <ScalarProperty Name="NGAYTRA" ColumnName="NGAYTRA" />
+                <ScalarProperty Name="NGAYHIENTAI" ColumnName="NGAYHIENTAI" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_YEUCAUTHIETBI">
+            <EntityTypeMapping TypeName="QuanLyThietBiCongTyModel.tb_YEUCAUTHIETBI">
+              <MappingFragment StoreEntitySet="tb_YEUCAUTHIETBI">
+                <ScalarProperty Name="IDYEUCAUTB" ColumnName="IDYEUCAUTB" />
+                <ScalarProperty Name="IDNGUOIDUNG" ColumnName="IDNGUOIDUNG" />
+                <ScalarProperty Name="IDTHIETBI" ColumnName="IDTHIETBI" />
+                <ScalarProperty Name="IDNHANVIEN" ColumnName="IDNHANVIEN" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="NGAYYEUCAU" ColumnName="NGAYYEUCAU" />
+                <ScalarProperty Name="NGAYTRA" ColumnName="NGAYTRA" />
+                <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="ReserveNoOfCopies" ColumnName="ReserveNoOfCopies" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

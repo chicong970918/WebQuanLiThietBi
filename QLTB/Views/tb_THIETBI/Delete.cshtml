@@ -1,0 +1,112 @@
+﻿@model DataLayer.tb_THIETBI
+
+@{
+    ViewBag.Title = "Bạn có chắc muốn xóa";
+}
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên thiết bị
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENTHIETBI)
+        </dd>
+        <dt>
+            Loại thiết bị
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_LOAITHIETBI.TENLOAITHIETBI)
+        </dd>
+
+
+        <dt>
+            Phòng ban
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_PHONGBAN.TENPHONGBAN)
+        </dd>
+        <dt>
+            Mô tả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+        <dt>
+            Xuất xứ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.XUATXU)
+        </dd>
+
+        <dt>
+            Cấu hình
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAUHINH)
+        </dd>
+
+        <dt>
+            Số IP
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOIP)
+        </dd>
+
+        <dt>
+            Số lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLUONG)
+        </dd>
+
+        <dt>
+            Ngày nhập
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHAYNHAP)
+        </dd>
+
+        <dt>
+            Giá
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIA)
+        </dd>
+
+        <dt>
+            Ghi chú
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHICHU)
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-success" /> |
+            @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

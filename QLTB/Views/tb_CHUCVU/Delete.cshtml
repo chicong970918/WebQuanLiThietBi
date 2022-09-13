@@ -1,0 +1,40 @@
+﻿@model DataLayer.tb_CHUCVU
+
+
+@{
+    ViewBag.Title = "Bạn có chắc muốn xóa?";
+}
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên chức vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENCHUCVU)
+        </dd>
+
+        <dt>
+            Quyền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUYEN)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-success" /> |
+            @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

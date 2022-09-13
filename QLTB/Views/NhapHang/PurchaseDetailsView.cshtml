@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DataLayer.tb_CHITIETNHAPHANG>
+
+@{
+    ViewBag.Title = "Chi tiết nhập hàng";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Giỏ hàng</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Tên thiết bị
+                        </th>
+                        <th>
+                            Số lượng
+                        </th>
+                        <th>
+                            Đơn giá
+                        </th>
+
+
+                        <th>Tổng tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tb_THIETBI.TENTHIETBI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SOLUONG)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DONGIA)
+                            </td>
+                            <td>
+
+                                @(string.Format("{0:0}", Math.Truncate(item.SOLUONG* item.DONGIA *10) /10))
+                            </td>
+
+
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model DataLayer.tb_CHUCVU
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_CHUCVU</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENCHUCVU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENCHUCVU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUYEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUYEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_NGUOIDUNG.TENNGUOIDUNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_NGUOIDUNG.TENNGUOIDUNG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCHUCVU }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

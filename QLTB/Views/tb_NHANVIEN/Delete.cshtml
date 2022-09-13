@@ -1,0 +1,98 @@
+﻿@model DataLayer.tb_NHANVIEN
+
+@{
+    ViewBag.Title = "Xóa";
+}
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            Họ và tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOVATEN)
+        </dd>
+
+        <dt>
+            Giới tính
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIOITINH)
+        </dd>
+
+        <dt>
+            Số điện thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+        <dt>
+            Chức vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_CHUCVU.TENCHUCVU)
+        </dd>
+
+        <dt>
+            Phòng ban
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_PHONGBAN.TENPHONGBAN)
+        </dd>
+
+        <dt>
+            Tình trạng làm việc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANGHOATDONG)
+        </dd>
+
+        <dt>
+            Ghi chú
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHICHU)
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-success" /> |
+            @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

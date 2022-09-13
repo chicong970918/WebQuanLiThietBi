@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DataLayer.tb_TRATHIETBI>
+
+@{
+    ViewBag.Title = "Lịch sử trả thiết bị";
+}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Lịch sử</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Thiết bị
+                        </th>
+                        <th>
+                            Nhân viên
+                        </th>
+
+                        <th>
+                            Ngày yêu cầu
+                        </th>
+                        <th>
+                            Ngày trả
+                        </th>
+                        <th>
+                            Ngày hiện tại
+                        </th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tb_THIETBI.TENTHIETBI)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tb_NHANVIEN.HOVATEN)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NGAYYEUCAU)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NGAYTRA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NGAYHIENTAI)
+                        </td>
+                     
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DataLayer.tb_NHACUNGCAP>
+
+@{
+    ViewBag.Title = "Nhập hàng hoàn tất";
+}
+
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+@using (Html.BeginForm("PurchaseConfirm", "NhapHang", FormMethod.Post))
+{
+    <div class="card">
+        <div class="card card-flat">
+            <div class="card-header">
+                <input type="submit" style="float:right;" value="Hoàn tất mua hàng" class="btn btn-success" />
+
+            </div>
+            <div class="card-body">
+                <!-- START table-responsive -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="dataTable">
+                        <thead style="background-color:lightgray;">
+                            <tr>
+                                <th>
+                                    Nhà cung cấp
+                                </th>
+                                <th>
+                                    Số điện thoại
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th></th>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TENNHACUNGCAP)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SDT)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EMAIL)
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="name @item.IDNHACUNGCAP" class="chb" />
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

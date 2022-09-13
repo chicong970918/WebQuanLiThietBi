@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DataLayer.tb_LOAITHIETBI>
+
+
+@{
+    ViewBag.Title = "Loại thiết bị";
+}
+
+
+<p>
+    @Html.ActionLink("Thêm loại thiết bị", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            Loại thiết bị
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENLOAITHIETBI)
+            </td>
+
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDLOAITHIETBI }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.IDLOAITHIETBI }, new { @class = "btn btn-danger" })
+
+            </td>
+        </tr>
+    }
+
+</table>

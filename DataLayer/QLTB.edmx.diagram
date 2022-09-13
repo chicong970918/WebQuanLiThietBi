@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f34d29c2245c4eb285d62a139ac4f1cd" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.PurTemDetailsTable" Width="1.5" PointX="12.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_CHITIETNHAPHANG" Width="1.5" PointX="15.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_CHUCVU" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_LOAINGUOIDUNG" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_LOAITHIETBI" Width="1.5" PointX="8.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_NGUOIDUNG" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_NHACUNGCAP" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.TB_NHANTHIETBI" Width="1.5" PointX="12.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_NHANVIEN" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_NHAPHANG" Width="1.5" PointX="10.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_PHONGBAN" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_THIETBI" Width="1.5" PointX="10.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_TRATHIETBI" Width="1.5" PointX="15.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThietBiCongTyModel.tb_YEUCAUTHIETBI" Width="1.5" PointX="15.75" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_PurTemDetailsTable_tb_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_CHITIETNHAPHANG_tb_NHAPHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_CHITIETNHAPHANG_tb_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_CHUCVU_tb_NGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_NHANVIEN_tb_CHUCVU" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_NGUOIDUNG_tb_LOAINGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_THIETBI_tb_LOAITHIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_NGUOIDUNG_tb_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_NHACUNGCAP_tb_NGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_TB_NHANTHIETBI_tb_NGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_NHAPHANG_tb_NGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_PHONGBAN_tb_NGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_THIETBI_tb_NGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_TRATHIETBI_tb_NGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_YEUCAUTHIETBI_tb_NGUOIDUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_NHAPHANG_tb_NHACUNGCAP" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_TB_NHANTHIETBI_tb_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_TB_NHANTHIETBI_tb_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_NHANVIEN_tb_PHONGBAN" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_TRATHIETBI_tb_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_YEUCAUTHIETBI_tb_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_THIETBI_tb_PHONGBAN" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_TRATHIETBI_tb_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThietBiCongTyModel.FK_tb_YEUCAUTHIETBI_tb_THIETBI" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

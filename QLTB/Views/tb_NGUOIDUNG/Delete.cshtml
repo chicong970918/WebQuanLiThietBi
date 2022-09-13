@@ -1,0 +1,63 @@
+﻿@model DataLayer.tb_NGUOIDUNG
+
+@{
+    ViewBag.Title = "Bạn có chắc muốn xóa?";
+}
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên người dùng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENNGUOIDUNG)
+        </dd>
+
+        <dt>
+            Mật khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASSWORD)
+        </dd>
+        <dt>
+            Nhân viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_NHANVIEN.HOVATEN)
+        </dd>
+        <dt>
+            Tình trạng hoạt động
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANGHOATDONG)
+        </dd>
+
+        <dt>
+            Loại người dùng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_LOAINGUOIDUNG.LOAINGUOIDUNG)
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-success" /> |
+            @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-primary" })
+
+        </div>
+    }
+</div>

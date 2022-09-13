@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DataLayer.tb_NHAPHANG>
+
+@{
+    ViewBag.Title = "Danh sách hàng nhập";
+}
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách hàng nhập</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Nhà cung cấp
+                        </th>
+                        <th>
+                            Ngày nhập
+                        </th>
+                        <th>
+                            Tổng tiền
+                        </th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tb_NHACUNGCAP.TENNHACUNGCAP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NGAYNHAP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GIA)
+                            </td>
+                            <td>
+
+                                @Html.ActionLink("Chi tiết", "PurchaseDetailsView", new { id = item.IDNHAPHANG }, new { @class = "btn btn-info" })
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

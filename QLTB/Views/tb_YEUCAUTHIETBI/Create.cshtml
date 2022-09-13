@@ -1,0 +1,94 @@
+﻿@model DataLayer.tb_YEUCAUTHIETBI
+
+
+@{
+    ViewBag.Title = "Thêm yêu cầu";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4 class="text-danger">@ViewBag.Message</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDTHIETBI, "Chọn thiết bị", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDTHIETBI", null, "Chọn", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDTHIETBI, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDNHANVIEN, "Chọn nhân viên", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDNHANVIEN", null, "Chọn", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDNHANVIEN, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SOLUONG, "Số lượng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SOLUONG, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SOLUONG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NGAYYEUCAU, "Ngày yêu cầu", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NGAYYEUCAU, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NGAYYEUCAU, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NGAYTRA, "Ngày trả", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NGAYTRA, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NGAYTRA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TRANGTHAI, "Trạng thái", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TRANGTHAI)
+                    @Html.ValidationMessageFor(model => model.TRANGTHAI, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GHICHU, "Ghi chú", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GHICHU, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GHICHU, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReserveNoOfCopies, "Yêu cầu duyệt", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.ReserveNoOfCopies)
+                    @Html.ValidationMessageFor(model => model.ReserveNoOfCopies, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Yêu cầu dùng thiết bị" class="btn btn-success" />
+                @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+}
+

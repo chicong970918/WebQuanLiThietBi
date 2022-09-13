@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DataLayer.tb_NGUOIDUNG>
+
+@{
+    ViewBag.Title = "Danh sách người dùng";
+}
+
+
+@Html.ActionLink("Thêm người dùng", "Create", null, new { @class = "btn btn-success" })
+<hr />
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Người dùng</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Tài khoản
+                        </th>
+                        <th>
+                            Mật khẩu
+                        </th>
+                        <th>
+                            Trạng thái hoạt động
+                        </th>
+                        <th>
+                            Nhân viên
+                        </th>
+                        <th>
+                            Loại người dùng
+                        </th>
+                   
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TENNGUOIDUNG)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PASSWORD)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TINHTRANGHOATDONG)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tb_NHANVIEN.HOVATEN)
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tb_LOAINGUOIDUNG.LOAINGUOIDUNG)
+                            </td>
+                         
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

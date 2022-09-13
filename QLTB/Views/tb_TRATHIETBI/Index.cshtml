@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DataLayer.tb_TRATHIETBI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYYEUCAU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYTRA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYHIENTAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_NGUOIDUNG.TENNGUOIDUNG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_NHANVIEN.HOVATEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_THIETBI.TENTHIETBI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYYEUCAU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYTRA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYHIENTAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_NGUOIDUNG.TENNGUOIDUNG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_NHANVIEN.HOVATEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_THIETBI.TENTHIETBI)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TBReturnID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TBReturnID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TBReturnID })
+        </td>
+    </tr>
+}
+
+</table>

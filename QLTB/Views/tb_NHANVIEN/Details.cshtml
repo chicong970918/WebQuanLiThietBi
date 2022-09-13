@@ -1,0 +1,98 @@
+﻿@model DataLayer.tb_NHANVIEN
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_NHANVIEN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDNGUOIDUNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDNGUOIDUNG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOVATEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOVATEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIOITINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIOITINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TINHTRANGHOATDONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANGHOATDONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHICHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHICHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_CHUCVU.TENCHUCVU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_CHUCVU.TENCHUCVU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_PHONGBAN.TENPHONGBAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_PHONGBAN.TENPHONGBAN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDNHANVIEN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
